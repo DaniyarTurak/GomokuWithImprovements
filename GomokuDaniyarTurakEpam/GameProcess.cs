@@ -244,14 +244,7 @@ namespace GomokuDaniyarTurakEpam
             int bestScoreOD2 = int.MinValue; // opponent diagonal right-up to left-down
 
 
-            int countHC = 0;
-            int countHO = 0;
-            int countVC = 0;
-            int countVO = 0;
-            int countDC1 = 0;
-            int countDC2 = 0;
-            int countDO1 = 0;
-            int countDO2 = 0;
+            int count = 0;
 
             // нахождения best score(в ряд) в горизонтальных линиях для currentPlayer
             for (int row = 0; row < 15; row++)
@@ -259,17 +252,17 @@ namespace GomokuDaniyarTurakEpam
                 for (int col = 0; col < 15; col++)
                 {
                     if (board[row, col] == currentPlayer)
-                        countHC++;
+                        count++;
                     else
-                        countHC = 0;
+                        count = 0;
                     //
 
-                    if (bestScoreCH < countHC)
+                    if (bestScoreCH < count)
                     {
-                        bestScoreCH = countHC;
+                        bestScoreCH = count;
                     }
                 }
-                countHC = 0;
+                count = 0;
             }
 
             // нахождения best score(в ряд) в вертикальных линиях для currentPlayer
@@ -278,13 +271,13 @@ namespace GomokuDaniyarTurakEpam
                 for (int col = 0; col < 15; col++)
                 {
                     if (board[col, row] == currentPlayer)
-                        countVC++;
+                        count++;
                     else
-                        countVC = 0;
+                        count = 0;
                     //
-                    if (bestScoreCV < countVC)
+                    if (bestScoreCV < count)
                     {
-                        bestScoreCV = countVC;
+                        bestScoreCV = count;
                     }
 
                 }
@@ -292,7 +285,7 @@ namespace GomokuDaniyarTurakEpam
                 {
                     bestScoreCV = 100;
                 }
-                countVC = 0;
+                count = 0;
             }
 
             // нахождения best score(в ряд) в диагоналях от левого верхнего угла до правого нижнего угла
@@ -305,13 +298,13 @@ namespace GomokuDaniyarTurakEpam
                     if ((row < 15 && col < 15) && row >= 0 && col >= 0)
                     {
                         if (board[row, col] == currentPlayer)
-                            countDC1++;
+                            count++;
                         else
-                            countDC1 = 0;
+                            count = 0;
                         //
-                        if (bestScoreCD1 < countDC1)
+                        if (bestScoreCD1 < count)
                         {
-                            bestScoreCD1 = countDC1;
+                            bestScoreCD1 = count;
                         }
                     }
                 }
@@ -319,7 +312,7 @@ namespace GomokuDaniyarTurakEpam
                 {
                     bestScoreCD1 = 100;
                 }
-                countDC1 = 0;
+                count = 0;
             }
 
             // нахождения best score(в ряд) в диагоналях от правого верхнего угла до левого нижнего угла
@@ -334,14 +327,14 @@ namespace GomokuDaniyarTurakEpam
                     {
                         if (board[temp_row, col] == currentPlayer)
                         {
-                            countDC2++;
+                            count++;
                         }
                         else
-                            countDC2 = 0;
+                            count = 0;
                         //
-                        if (bestScoreCD2 < countDC2)
+                        if (bestScoreCD2 < count)
                         {
-                            bestScoreCD2 = countDC2;
+                            bestScoreCD2 = count;
                         }
                     }
                     temp_row++;
@@ -351,7 +344,7 @@ namespace GomokuDaniyarTurakEpam
                     bestScoreCD2 = 100;
                 }
                 len--;
-                countDC2 = 0;
+                count = 0;
             }
 
             board[indexRow, indexCol] = previousPlayer;
@@ -362,20 +355,20 @@ namespace GomokuDaniyarTurakEpam
                 for (int col = 0; col < 15; col++)
                 {
                     if (board[row, col] == previousPlayer)
-                        countHO++;
+                        count++;
                     else
-                        countHO = 0;
+                        count = 0;
                     //
-                    if (bestScoreOH < countHO)
+                    if (bestScoreOH < count)
                     {
-                        bestScoreOH = countHO;
+                        bestScoreOH = count;
                     }
                 }
                 if (bestScoreOH >= 5)
                 {
                     bestScoreOH = 80;
                 }
-                countHO = 0;
+                count = 0;
             }
 
             // нахождения best score(в ряд) в вертикальных линиях для оппонента
@@ -384,20 +377,20 @@ namespace GomokuDaniyarTurakEpam
                 for (int col = 0; col < 15; col++)
                 {
                     if (board[col, row] == previousPlayer)
-                        countVO++;
+                        count++;
                     else
-                        countVO = 0;
+                        count = 0;
                     //
-                    if (bestScoreOV < countVO)
+                    if (bestScoreOV < count)
                     {
-                        bestScoreOV = countVO;
+                        bestScoreOV = count;
                     }
                 }
                 if (bestScoreOV >= 5)
                 {
                     bestScoreOV = 80;
                 }
-                countVO = 0;
+                count = 0;
             }
 
             // нахождения best score(в ряд) в диагоналях от левого верхнего угла до правого нижнего угла
@@ -410,13 +403,13 @@ namespace GomokuDaniyarTurakEpam
                     if ((row < 15 && col < 15) && row >= 0 && col >= 0)
                     {
                         if (board[row, col] == previousPlayer)
-                            countDO1++;
+                            count++;
                         else
-                            countDO1 = 0;
+                            count = 0;
                         //
-                        if (bestScoreOD1 < countDO1)
+                        if (bestScoreOD1 < count)
                         {
-                            bestScoreOD1 = countDO1;
+                            bestScoreOD1 = count;
                         }
                     }
                 }
@@ -424,7 +417,7 @@ namespace GomokuDaniyarTurakEpam
                 {
                     bestScoreOD1 = 80;
                 }
-                countDO1 = 0;
+                count = 0;
             }
 
             // нахождения best score(в ряд) в диагоналях от правого верхнего угла до левого нижнего угла
@@ -439,14 +432,14 @@ namespace GomokuDaniyarTurakEpam
                     {
                         if (board[temp_row, col] == previousPlayer)
                         {
-                            countDO2++;
+                            count++;
                         }
                         else
-                            countDO2 = 0;
+                            count = 0;
                         //
-                        if (bestScoreOD2 < countDO2)
+                        if (bestScoreOD2 < count)
                         {
-                            bestScoreOD2 = countDO2;
+                            bestScoreOD2 = count;
                         }
                     }
                     temp_row++;
@@ -456,7 +449,7 @@ namespace GomokuDaniyarTurakEpam
                     bestScoreOD2 = 80;
                 }
                 len--;
-                countDO2 = 0;
+                count = 0;
             }
 
             // создаем листы который будут содержать отсортированные best scores 
