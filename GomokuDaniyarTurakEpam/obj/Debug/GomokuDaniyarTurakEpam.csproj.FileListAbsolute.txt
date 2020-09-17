@@ -1,0 +1,7 @@
+C:\Users\Lenovo\Source\Repos\GomokuDaniyarTurak\GomokuDaniyarTurakEpam\bin\Debug\GomokuDaniyarTurakEpam.exe.config
+C:\Users\Lenovo\Source\Repos\GomokuDaniyarTurak\GomokuDaniyarTurakEpam\bin\Debug\GomokuDaniyarTurakEpam.exe
+C:\Users\Lenovo\Source\Repos\GomokuDaniyarTurak\GomokuDaniyarTurakEpam\bin\Debug\GomokuDaniyarTurakEpam.pdb
+C:\Users\Lenovo\Source\Repos\GomokuDaniyarTurak\GomokuDaniyarTurakEpam\obj\Debug\GomokuDaniyarTurakEpam.csprojAssemblyReference.cache
+C:\Users\Lenovo\Source\Repos\GomokuDaniyarTurak\GomokuDaniyarTurakEpam\obj\Debug\GomokuDaniyarTurakEpam.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Source\Repos\GomokuDaniyarTurak\GomokuDaniyarTurakEpam\obj\Debug\GomokuDaniyarTurakEpam.exe
+C:\Users\Lenovo\Source\Repos\GomokuDaniyarTurak\GomokuDaniyarTurakEpam\obj\Debug\GomokuDaniyarTurakEpam.pdb
